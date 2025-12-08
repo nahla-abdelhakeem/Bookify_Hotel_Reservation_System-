@@ -1,0 +1,226 @@
+﻿.profile-page {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+}
+
+.profile-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile-header {
+    margin-bottom: 2rem;
+}
+
+.profile-avatar {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: 5px solid #d4a574;
+    object-fit: cover;
+    margin-bottom: 1rem;
+}
+
+.profile-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+}
+
+.profile-email {
+    color: #718096;
+    font-size: 1rem;
+}
+
+.profile-stats {
+    border-top: 2px solid #f7fafc;
+    padding-top: 1.5rem;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background: #f7fafc;
+    border-radius: 10px;
+}
+
+.stat-item i {
+    font-size: 2rem;
+    color: #d4a574;
+}
+
+.stat-item h4 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin: 0;
+}
+
+.stat-item p {
+    font-size: 0.875rem;
+    color: #718096;
+    margin: 0;
+}
+
+.profile-actions {
+    margin-top: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.profile-actions .btn {
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    border: none;
+}
+
+
+
+    .profile-actions .btn-Admin-Dashboard {
+        background: #d4a574;
+        color: white;
+    }
+
+    .profile-actions .btn-Admin-Dashboard:hover {
+        background: #c89563;
+        transform: translateY(-2px);
+    }
+
+    .profile-actions .btn-logout {
+        background: #e2e8f0;
+        color: #4a5568;
+    }
+
+.profile-actions .btn-logout:hover {
+    background: #cbd5e0;
+    transform: translateY(-2px);
+}
+
+.booking-history-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2d3748;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.section-title i {
+    color: #d4a574;
+}
+
+.no-bookings {
+    text-align: center;
+    padding: 3rem 2rem;
+}
+
+.no-bookings i {
+    font-size: 4rem;
+    color: #cbd5e0;
+    margin-bottom: 1rem;
+}
+
+.no-bookings p {
+    color: #718096;
+    font-size: 1.125rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Booking History Table */
+.booking-history-table {
+    margin-top: 1.5rem;
+    background: white;
+}
+
+.booking-history-table thead {
+    background: linear-gradient(135deg, #d4a574 0%, #c89563 100%);
+    color: white;
+}
+
+.booking-history-table thead th {
+    font-weight: 600;
+    padding: 1rem;
+    border: none;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.booking-history-table tbody tr {
+    border-bottom: 1px solid #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.booking-history-table tbody tr:hover {
+    background-color: #f7fafc;
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.1);
+}
+
+.booking-history-table tbody td {
+    padding: 1rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.booking-history-table .booking-number {
+    font-weight: 600;
+    color: #d4a574;
+}
+
+.booking-history-table .room-names {
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.booking-history-table .price {
+    font-weight: 700;
+    color: #d4a574;
+    font-size: 1.1rem;
+}
+
+.table-responsive {
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+    .profile-card {
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-history-table {
+        font-size: 0.85rem;
+    }
+
+    .booking-history-table thead th,
+    .booking-history-table tbody td {
+        padding: 0.75rem 0.5rem;
+    }
+}

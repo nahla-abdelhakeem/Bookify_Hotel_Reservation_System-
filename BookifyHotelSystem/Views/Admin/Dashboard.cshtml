@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Dashboard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="dashboard-container">
+    <div class="dashboard-grid">
+        <!-- Users Card -->
+        <a asp-controller="User" asp-action="Index" class="dashboard-card">
+            <div class="card-icon primary">
+                <i class="fas fa-users"></i>
+            </div>
+            <div class="card-content">
+                <h3>Total Users</h3>
+                <div class="card-value">@ViewBag.TotalUsers</div>
+                <div class="card-label">Manage all users</div>
+            </div>
+        </a>
+
+        <!-- Roles Card -->
+        <a asp-controller="Role" asp-action="Index" class="dashboard-card">
+            <div class="card-icon success">
+                <i class="fas fa-user-shield"></i>
+            </div>
+            <div class="card-content">
+                <h3>Total Roles</h3>
+                <div class="card-value">@ViewBag.TotalRoles</div>
+                <div class="card-label">Manage roles & permissions</div>
+            </div>
+        </a>
+
+        <!-- Room Types Card -->
+        <a asp-controller="RoomType" asp-action="Index" class="dashboard-card">
+            <div class="card-icon warning">
+                <i class="fas fa-bed"></i>
+            </div>
+            <div class="card-content">
+                <h3>Room Types</h3>
+                <div class="card-value">@ViewBag.TotalRoomTypes</div>
+                <div class="card-label">Manage room categories</div>
+            </div>
+        </a>
+
+        <!-- Rooms Card -->
+        <a asp-controller="Room" asp-action="Index" class="dashboard-card">
+            <div class="card-icon info">
+                <i class="fas fa-door-open"></i>
+            </div>
+            <div class="card-content">
+                <h3>Total Rooms</h3>
+                <div class="card-value">@ViewBag.TotalRooms</div>
+                <div class="card-label">Manage all rooms</div>
+            </div>
+        </a>
+
+        <!-- Bookings Card -->
+        <a asp-controller="Booking" asp-action="Index" class="dashboard-card">
+            <div class="card-icon gold">
+                <i class="fas fa-calendar-check"></i>
+            </div>
+            <div class="card-content">
+                <h3>Total Bookings</h3>
+                <div class="card-value">@ViewBag.TotalBookings</div>
+                <div class="card-label">View all reservations</div>
+            </div>
+        </a>
+</div>

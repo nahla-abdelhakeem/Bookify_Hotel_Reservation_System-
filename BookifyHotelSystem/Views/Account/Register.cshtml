@@ -1,0 +1,99 @@
+﻿@model BookifyHotelSystem.View_Model.RegiterViewModel
+
+@{
+    ViewData["Title"] = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/register.css" />
+}
+
+<div class="register-page">
+    <div class="register-card">
+        <div class="register-header">
+            <h1>Create Account</h1>
+            <p>Join us and start your journey</p>
+        </div>
+
+        <form asp-action="Register" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger validation-summary"></div>
+
+            <div class="form-group-modern">
+                <label asp-for="FullName">Full Name</label>
+                <input asp-for="FullName" class="form-input-modern" placeholder="Enter your full name" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group-modern">
+                <label asp-for="UserName">Username</label>
+                <input asp-for="UserName" class="form-input-modern" placeholder="Choose a username" />
+                <span asp-validation-for="UserName" class="text-danger"></span>
+            </div>
+
+            <div class="form-group-modern">
+                <label asp-for="Email">Email Address</label>
+                <input asp-for="Email" type="email" class="form-input-modern" placeholder="Enter your email" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+
+            <div class="form-group-modern">
+                <label asp-for="Password">Password</label>
+                <div class="password-wrapper">
+                    <input asp-for="Password" type="password" id="password-field" class="form-input-modern"
+                        placeholder="Create a password" />
+                    <i class="fas fa-eye password-toggle" id="togglePassword"></i>
+                </div>
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+
+            <div class="form-group-modern">
+                <label asp-for="Confirmpasword">Confirm Password</label>
+                <div class="password-wrapper">
+                    <input asp-for="Confirmpasword" type="password" id="confirm-password-field"
+                        class="form-input-modern" placeholder="Confirm your password" />
+                    <i class="fas fa-eye password-toggle" id="toggleConfirmPassword"></i>
+                </div>
+                <span asp-validation-for="Confirmpasword" class="text-danger"></span>
+            </div>
+
+            <button type="submit" class="btn-register">Create Account</button>
+
+            <div class="register-footer">
+                <p>Already have an account? <a asp-action="Login">Sign In</a></p>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+
+    <script>
+        // Toggle Password Visibility
+        const togglePassword = document.getElementById('togglePassword');
+        const passwordField = document.getElementById('password-field');
+
+        togglePassword.addEventListener('click', function () {
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye-slash');
+            this.classList.toggle('fa-eye');
+        });
+
+        // Toggle Confirm Password Visibility
+        const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+        const confirmPasswordField = document.getElementById('confirm-password-field');
+
+        toggleConfirmPassword.addEventListener('click', function () {
+            const type = confirmPasswordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPasswordField.setAttribute('type', type);
+
+            this.classList.toggle('fa-eye-slash');
+            this.classList.toggle('fa-eye');
+        });
+    </script>
+}

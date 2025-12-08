@@ -1,0 +1,131 @@
+﻿.cancel-page {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    padding: 2rem;
+}
+
+.cancel-card {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem;
+    max-width: 600px;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    animation: slideUp 0.5s ease-out;
+}
+
+@@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.cancel-icon {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #e74c3c 0%, #c0392b 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 2rem;
+    animation: scaleIn 0.6s ease-out 0.2s both;
+}
+
+@@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+.cancel-icon i {
+    color: white;
+    font-size: 3rem;
+}
+
+.cancel-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+}
+
+.cancel-message {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+
+.info-box {
+    background: #fff3cd;
+    border: 1px solid #ffc107;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    color: #856404;
+}
+
+    .info-box i {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+    }
+
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-primary-custom {
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+    .btn-primary-custom:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+        color: white;
+        text-decoration: none;
+    }
+
+.btn-secondary-custom {
+    background: white;
+    color: #d4a574;
+    padding: 1rem 2rem;
+    border: 2px solid #d4a574;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+    .btn-secondary-custom:hover {
+        background: #d4a574;
+        color: white;
+        text-decoration: none;
+    }

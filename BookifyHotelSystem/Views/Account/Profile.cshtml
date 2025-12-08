@@ -1,0 +1,100 @@
+﻿@using BookifyHotelSystem.View_Model
+@model ProfileViewModel
+@{
+    ViewData["Title"] = "Profile";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/profile.css" />
+}
+
+<div class="profile-page">
+    <div class="container py-5">
+        <div class="row">
+            <!-- Left Column: User Info -->
+            <div class="col-lg-4">
+                <div class="profile-card">
+                    <div class="profile-header">
+                        <img src="@Model.ProfileImage" alt="Profile" class="profile-avatar">
+                        <h3 class="profile-name">@Model.UserName</h3>
+                        <p class="profile-email">@Model.Email</p>
+                    </div>
+
+                    <div class="profile-stats">
+                        <div class="stat-item">
+                            <i class="fas fa-calendar-check"></i>
+                            <div>
+                                <h4>@Model.BookingHistory.Count</h4>
+                                <p>Total Bookings</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="profile-actions">
+                        @* // if user admin *@
+                        @if(User.IsInRole("Admin"))
+                        {
+                            <a asp-controller="Admin" asp-action="Dashboard" class="btn btn-Admin-Dashboard">
+                                <i class="fas fa-user-edit"></i> Admin Dashboard
+                            </a>
+                        }
+                        <a asp-controller="Account" asp-action="Logout" class="btn btn-logout">
+                            <i class="fas fa-sign-out-alt"></i> Logout
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Booking History -->
+            <div class="col-lg-8">
+                <div class="booking-history-card">
+                    <h2 class="section-title">
+                        <i class="fas fa-history"></i> Booking History
+                    </h2>
+
+                    @if (Model.BookingHistory.Any())
+                    {
+                        <div class="table-responsive">
+                            <table class="table booking-history-table">
+                                <thead>
+                                    <tr>
+                                        <th>Booking #</th>
+                                        <th>Start Date</th>
+                                        <th>End Date</th>
+                                        <th>Rooms</th>
+                                        <th>Nights</th>
+                                        <th>Total Price</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var booking in Model.BookingHistory)
+                                    {
+                                        <tr>
+                                            <td class="booking-number">#@booking.BookingNo</td>
+                                            <td>@booking.StartDate.ToString("dd MMM yyyy")</td>
+                                            <td>@booking.EndDate.ToString("dd MMM yyyy")</td>
+                                            <td class="room-names">@string.Join(", ", booking.RoomNames)</td>
+                                            <td>@booking.TotalNights</td>
+                                            <td class="price">EGP @booking.TotalPrice.ToString("N2")</td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="no-bookings">
+                            <i class="fas fa-inbox"></i>
+                            <p>No bookings found</p>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+                                Browse Rooms
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

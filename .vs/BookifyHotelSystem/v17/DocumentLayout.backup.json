@@ -1,0 +1,113 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Status_200 team\\BookifyHotelSystem\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|d:\\status_200 team\\bookifyhotelsystem\\bookifyhotelsystem\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|solutionrelative:bookifyhotelsystem\\controllers\\roomtypecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|d:\\status_200 team\\bookifyhotelsystem\\bookifyhotelsystem\\views\\roomtype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|solutionrelative:bookifyhotelsystem\\views\\roomtype\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|d:\\status_200 team\\bookifyhotelsystem\\bookifyhotelsystem\\views\\roomtype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|solutionrelative:bookifyhotelsystem\\views\\roomtype\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|d:\\status_200 team\\bookifyhotelsystem\\bookifyhotelsystem\\databaseservices\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|solutionrelative:bookifyhotelsystem\\databaseservices\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|d:\\status_200 team\\bookifyhotelsystem\\bookifyhotelsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1A30603-D096-4A58-9824-93CDB6CBE226}|BookifyHotelSystem\\BookifyHotelSystem.csproj|solutionrelative:bookifyhotelsystem\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 6,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\DatabaseServices\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "BookifyHotelSystem\\DatabaseServices\\AppDbContext.cs",
+              "ToolTip": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\DatabaseServices\\AppDbContext.cs",
+              "RelativeToolTip": "BookifyHotelSystem\\DatabaseServices\\AppDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T23:01:53.183Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Program.cs",
+              "RelativeDocumentMoniker": "BookifyHotelSystem\\Program.cs",
+              "ToolTip": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Program.cs",
+              "RelativeToolTip": "BookifyHotelSystem\\Program.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAAwBAAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T22:58:34.379Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Views\\RoomType\\Create.cshtml",
+              "RelativeDocumentMoniker": "BookifyHotelSystem\\Views\\RoomType\\Create.cshtml",
+              "ToolTip": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Views\\RoomType\\Create.cshtml",
+              "RelativeToolTip": "BookifyHotelSystem\\Views\\RoomType\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-19T22:51:21.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Views\\RoomType\\Index.cshtml",
+              "RelativeDocumentMoniker": "BookifyHotelSystem\\Views\\RoomType\\Index.cshtml",
+              "ToolTip": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Views\\RoomType\\Index.cshtml",
+              "RelativeToolTip": "BookifyHotelSystem\\Views\\RoomType\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-19T22:47:16.878Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "RoomTypeController.cs",
+              "DocumentMoniker": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Controllers\\RoomTypeController.cs",
+              "RelativeDocumentMoniker": "BookifyHotelSystem\\Controllers\\RoomTypeController.cs",
+              "ToolTip": "D:\\Status_200 team\\BookifyHotelSystem\\BookifyHotelSystem\\Controllers\\RoomTypeController.cs",
+              "RelativeToolTip": "BookifyHotelSystem\\Controllers\\RoomTypeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-19T22:46:00.578Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,46 @@
+@{
+    ViewData["Title"] = "Payment Success";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/success.css" />
+}
+
+<div class="success-page">
+    <div class="success-card">
+        <div class="success-icon">
+            <i class="fas fa-check"></i>
+        </div>
+
+        <h1 class="success-title">Payment Successful!</h1>
+        <p class="success-message">
+            Thank you for your booking. Your reservation has been confirmed and you will receive a confirmation email
+            shortly.
+        </p>
+
+        <div class="booking-details">
+            <h3>Booking Details</h3>
+            <div class="detail-row">
+                <span class="detail-label">Booking Number:</span>
+                <span class="detail-value">#@ViewBag.BookingNumber</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Total Amount Paid:</span>
+                <span class="detail-value">$@ViewBag.TotalPrice</span>
+            </div>
+            <div class="detail-row">
+                <span class="detail-label">Payment ID:</span>
+                <span class="detail-value">@ViewBag.PaymentId</span>
+            </div>
+        </div>
+
+        <div class="action-buttons">
+            <a asp-controller="Home" asp-action="Index" class="btn-primary-custom">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <button onclick="window.print()" class="btn-secondary-custom">
+                <i class="fas fa-print"></i> Print Receipt
+            </button>
+        </div>
+    </div>
+</div>

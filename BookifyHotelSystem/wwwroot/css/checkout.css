@@ -1,0 +1,542 @@
+/* Checkout Section - Modern Booking Details Design */
+.checkout-section {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    padding: 3rem 0;
+}
+
+/* Page Header */
+.booking-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.booking-title i {
+    color: #d4a574;
+    margin-right: 1rem;
+}
+
+/* Main Container */
+.booking-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+@media (max-width: 992px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Styling */
+.personal-info-card,
+.rooms-info-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border: 3px solid #d4a574;
+}
+
+/* Section Titles */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #f0f0f0;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-title i {
+    color: #2c3e50;
+    font-size: 1.3rem;
+}
+
+/* Personal Information Fields */
+.info-field {
+    margin-bottom: 1.5rem;
+}
+
+.field-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.field-label i {
+    color: #d4a574;
+    font-size: 0.9rem;
+}
+
+.field-input {
+    background: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.field-input:focus {
+    background: white;
+    border-color: #d4a574;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+    outline: none;
+}
+
+.field-input:read-only {
+    background: #f0f0f0;
+    cursor: not-allowed;
+}
+
+/* Rooms Table Header */
+.rooms-table-header {
+    display: grid;
+    grid-template-columns: 80px 140px 120px 120px 80px 110px 110px;
+    gap: 0.75rem;
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.header-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.header-col i {
+    font-size: 0.85rem;
+    margin-right: 0.25rem;
+}
+
+/* Rooms List */
+.rooms-list {
+    margin-bottom: 1.5rem;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+.room-item {
+    display: grid;
+    grid-template-columns: 80px 140px 120px 120px 80px 110px 110px;
+    gap: 0.75rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 12px;
+    margin-bottom: 0.75rem;
+    align-items: center;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.room-item:hover {
+    background: white;
+    border-color: #d4a574;
+    box-shadow: 0 5px 15px rgba(212, 165, 116, 0.2);
+}
+
+.room-thumbnail {
+    width: 70px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.room-col {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.col-image {
+    justify-content: center;
+}
+
+.col-room {
+    justify-content: flex-start;
+}
+
+.room-name {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.room-type {
+    color: #718096;
+    font-size: 0.8rem;
+    display: block;
+}
+
+.date-value {
+    font-size: 0.9rem;
+    color: #2c3e50;
+    font-weight: 500;
+}
+
+.nights-value {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    font-weight: 700;
+}
+
+.price-amount {
+    font-size: 0.95rem;
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.total-amount-room {
+    font-size: 1rem;
+    color: #d4a574;
+    font-weight: 700;
+}
+
+/* Total Summary */
+.total-summary {
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    border: 2px solid #d4a574;
+}
+
+.summary-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 0;
+}
+
+.summary-item:not(:last-child) {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.summary-icon {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 1.05rem;
+}
+
+.summary-icon i {
+    color: #d4a574;
+}
+
+.total-price-row .total-amount {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #d4a574;
+}
+
+.nights-row .nights-count {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #5a6c7d;
+}
+
+/* Confirm Button */
+.btn-confirm-booking {
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+    color: white;
+    border: none;
+    padding: 1.25rem 4rem;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 20px rgba(212, 165, 116, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.btn-confirm-booking:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(212, 165, 116, 0.5);
+    background: linear-gradient(135deg, #b8935f 0%, #d4a574 100%);
+}
+
+.btn-confirm-booking i {
+    font-size: 1.3rem;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+
+    .rooms-table-header,
+    .room-item {
+        grid-template-columns: 70px 120px 100px 100px 70px 100px 100px;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    .room-thumbnail {
+        width: 60px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 992px) {
+    .booking-container {
+        grid-template-columns: 1fr;
+    }
+
+    .rooms-info-card {
+        overflow-x: auto;
+    }
+
+    .rooms-table-header,
+    .room-item {
+        min-width: 750px;
+    }
+}
+
+@media (max-width: 768px) {
+    .booking-title {
+        font-size: 1.8rem;
+    }
+
+    .personal-info-card,
+    .rooms-info-card {
+        padding: 1.5rem;
+    }
+
+    .btn-confirm-booking {
+        padding: 1rem 2.5rem;
+        font-size: 1rem;
+    }
+
+    .rooms-table-header,
+    .room-item {
+        grid-template-columns: 60px 100px 90px 90px 60px 90px 90px;
+        gap: 0.4rem;
+        font-size: 0.75rem;
+        padding: 0.75rem 0.5rem;
+    }
+
+    .room-thumbnail {
+        width: 50px;
+        height: 40px;
+    }
+}
+
+.checkout-section {
+    padding: 4rem 0;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.checkout-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.checkout-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.checkout-header p {
+    color: #7f8c8d;
+    font-size: 1.1rem;
+}
+
+.checkout-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.checkout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.checkout-card {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid #d4a574;
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-field label {
+    display: block;
+    font-weight: 500;
+    color: #2c3e50;
+    margin-bottom: 0.5rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-field input:focus,
+.form-field select:focus,
+.form-field textarea:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
+}
+
+.rooms-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+}
+
+.rooms-table thead th {
+    background: #f8f9fa;
+    color: #2c3e50;
+    font-weight: 600;
+    padding: 1rem;
+    text-align: left;
+    border-bottom: 2px solid #d4a574;
+}
+
+.rooms-table tbody tr {
+    background: white;
+    transition: all 0.3s ease;
+}
+
+.rooms-table tbody tr:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.rooms-table tbody td {
+    padding: 1rem;
+    color: #2c3e50;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.room-image {
+    width: 80px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.summary-section {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid #e0e0e0;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    font-size: 1rem;
+}
+
+.summary-row.total {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #d4a574;
+    padding-top: 1rem;
+    border-top: 2px solid #d4a574;
+}
+
+.btn-checkout {
+    width: 100%;
+    padding: 1rem;
+    background: linear-gradient(135deg, #d4a574 0%, #b8935f 100%);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 1.5rem;
+}
+
+.btn-checkout:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-checkout:disabled {
+    background: #95a5a6;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 992px) {
+    .checkout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .rooms-table {
+        font-size: 0.9rem;
+    }
+
+    .room-image {
+        width: 60px;
+        height: 45px;
+    }
+}
+
+@media (max-width: 576px) {
+    .checkout-header h1 {
+        font-size: 2rem;
+    }
+
+    .checkout-card {
+        padding: 1.5rem;
+    }
+
+    .rooms-table {
+        font-size: 0.85rem;
+    }
+
+    .rooms-table thead th,
+    .rooms-table tbody td {
+        padding: 0.5rem;
+    }
+}

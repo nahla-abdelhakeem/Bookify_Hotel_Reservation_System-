@@ -1,0 +1,175 @@
+﻿@using BookifyHotelSystem.Utilities
+@using BookifyHotelSystem.View_Model
+@model Booking
+@inject IHttpContextAccessor iHttpContextAccessor
+@{
+    ViewData["Title"] = "Checkout";
+
+    List<RoomViewModel> rooms = iHttpContextAccessor.HttpContext.Session.Get<List<RoomViewModel>>("rooms");
+
+    if (rooms == null)
+    {
+        rooms = new List<RoomViewModel>();
+    }
+
+    decimal totalPrice = 0;
+    int totalNights = 0;
+    foreach (var room in rooms)
+    {
+        int nights = room.Nights > 0 ? room.Nights : 1;
+        decimal roomTotal = room.TotalPrice > 0 ? room.TotalPrice : room.PricePerNight;
+        totalPrice += roomTotal;
+        totalNights += nights;
+    }
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/checkout.css" />
+}
+
+<!-- Checkout Section -->
+<section class="checkout-section py-5">
+    <div class="container">
+        <!-- Page Header -->
+        <div class="text-center mb-5">
+            <h1 class="booking-title">
+                <i class="fas fa-clipboard-list"></i> Booking Details
+            </h1>
+            <p class="text-muted">Complete your booking information</p>
+        </div>
+
+        <form asp-action="Checkout" method="post">
+            <div class="booking-container">
+                <!-- Left Side: Personal Information -->
+                <div class="personal-info-card">
+                    <h2 class="section-title">
+                        <i class="fas fa-user-circle"></i> Personal Information
+                    </h2>
+
+                    <div asp-validation-summary="All" class="text-danger mb-3"></div>
+
+                    <!-- Booking Number -->
+                    <div class="info-field">
+                        <label class="field-label">
+                            <i class="fas fa-hashtag"></i> Booking Number
+                        </label>
+                        <input asp-for="BookingNo" value="@ViewBag.OrderNumber" class="form-control field-input"
+                            readonly disabled />
+                    </div>
+
+                    <!-- User Name -->
+                    <div class="info-field">
+                        <label class="field-label">
+                            <i class="fas fa-user"></i> User Name
+                        </label>
+                        <input asp-for="UserName" value="@ViewBag.UserName" class="form-control field-input" readonly />
+                        <span asp-validation-for="UserName" class="text-danger"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="info-field">
+                        <label class="field-label">
+                            <i class="fas fa-envelope"></i> Email Address
+                        </label>
+                        <input asp-for="Email" type="email" class="form-control field-input" required />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                </div>
+
+                <!-- Right Side: Selected Rooms -->
+                <div class="rooms-info-card">
+                    <h2 class="section-title">
+                        <i class="fas fa-bed"></i> Selected Rooms
+                    </h2>
+
+                    @if (rooms != null && rooms.Any())
+                    {
+                        <!-- Rooms Table Header -->
+                        <div class="rooms-table-header">
+                            <div class="header-col col-image">Image</div>
+                            <div class="header-col col-room">Room</div>
+                            <div class="header-col col-date">Start Date</div>
+                            <div class="header-col col-date">End Date</div>
+                            <div class="header-col col-nights">Nights</div>
+                            <div class="header-col col-price">Price/Night</div>
+                            <div class="header-col col-total">Total</div>
+                        </div>
+
+                        <!-- Rooms List -->
+                        <div class="rooms-list">
+                            @foreach (var room in rooms)
+                            {
+                                int nights = room.Nights > 0 ? room.Nights : 1;
+                                decimal roomTotal = room.TotalPrice > 0 ? room.TotalPrice : (room.PricePerNight * nights);
+
+                                <div class="room-item">
+                                    <div class="room-col col-image">
+                                        <img src="@room.Image" alt="@room.Name" class="room-thumbnail" />
+                                    </div>
+                                    <div class="room-col col-room">
+                                        <strong class="room-name">@room.Name</strong>
+                                    </div>
+                                    <div class="room-col col-date">
+                                        <span class="date-value">@(room.StartDate?.ToString("dd/MM/yyyy") ?? "N/A")</span>
+                                    </div>
+                                    <div class="room-col col-date">
+                                        <span class="date-value">@(room.EndDate?.ToString("dd/MM/yyyy") ?? "N/A")</span>
+                                    </div>
+                                    <div class="room-col col-nights">
+                                        <strong class="nights-value">@nights</strong>
+                                    </div>
+                                    <div class="room-col col-price">
+                                        <span class="price-amount">EGP @room.PricePerNight.ToString("F2")</span>
+                                    </div>
+                                    <div class="room-col col-total">
+                                        <strong class="total-amount-room">EGP @roomTotal.ToString("F2")</strong>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+
+                        <!-- Total Summary -->
+                        <div class="total-summary">
+                            <div class="summary-item total-price-row">
+                                <span class="summary-icon">
+                                    <i class="fas fa-calculator"></i> Total Price
+                                </span>
+                                <span class="total-amount">EGP @totalPrice</span>
+                            </div>
+                            <div class="summary-item nights-row">
+                                <span class="summary-icon">
+                                    <i class="fas fa-moon"></i> Nights Stay
+                                </span>
+                                <span class="nights-count">@totalNights nights</span>
+                            </div>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="text-center py-5">
+                            <i class="fas fa-shopping-cart" style="font-size: 3rem; color: #ccc;"></i>
+                            <p class="mt-3">No rooms selected</p>
+                            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">
+                                Browse Rooms
+                            </a>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <!-- Confirm Button -->
+            @if (rooms != null && rooms.Any())
+            {
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn-confirm-booking">
+                        <i class="fas fa-check-circle"></i> Confirm Booking
+                    </button>
+                </div>
+            }
+        </form>
+    </div>
+</section>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

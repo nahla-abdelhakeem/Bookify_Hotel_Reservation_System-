@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Payment Cancelled";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/cancel.css" />
+}
+
+
+<div class="cancel-page">
+    <div class="cancel-card">
+        <div class="cancel-icon">
+            <i class="fas fa-times"></i>
+        </div>
+
+        <h1 class="cancel-title">Payment Cancelled</h1>
+        <p class="cancel-message">
+            Your payment has been cancelled. No charges have been made to your account.
+        </p>
+
+        <div class="info-box">
+            <i class="fas fa-info-circle"></i>
+            <p>Your selected rooms are still in your cart. You can try again whenever you're ready!</p>
+        </div>
+
+        <div class="action-buttons">
+            <a asp-controller="Home" asp-action="Cart" class="btn-primary-custom">
+                <i class="fas fa-shopping-cart"></i> Back to Cart
+            </a>
+            <a asp-controller="Home" asp-action="Index" class="btn-secondary-custom">
+                <i class="fas fa-home"></i> Go to Home
+            </a>
+        </div>
+    </div>
+</div>
