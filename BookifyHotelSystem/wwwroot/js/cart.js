@@ -3,6 +3,8 @@ $(document).ready(function () {
     const today = new Date().toISOString().split('T')[0];
     $('.cart-start').attr('min', today);
 
+
+
     // Update end date min when start date changes
     $('.cart-start').on('change', function () {
         const $row = $(this).closest('tr');

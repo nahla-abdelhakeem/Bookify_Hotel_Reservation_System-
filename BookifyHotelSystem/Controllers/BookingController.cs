@@ -49,15 +49,30 @@ namespace BookifyHotelSystem.Controllers
                     }
                 }
 
+
                 // Save updated rooms back to session
                 HttpContext.Session.Set("rooms", rooms);
+                foreach (var room in rooms)
+                {
+                   
+                    bool roomAvalilabilty = unitOfWork.BookingRepo.IsRoomAvailable(room.Id, room.StartDate ?? DateTime.Now, room.EndDate ?? DateTime.Now.AddDays(1));
+                    if (!roomAvalilabilty)
+                    {
+                        TempData["error"] = $"The selected room: {room.Name} is not available for the chosen dates. Please select different dates.";
+                        return RedirectToAction("Cart","Home", rooms);
+                    }
+
+                }
             }
 
             if (User.Identity != null && User.Identity.IsAuthenticated)
             {
                 ViewBag.UserName = User.Identity.Name;
             }
-            
+            else
+            {
+                ViewBag.UserName = "Anonymous";
+            }
             ViewBag.OrderNumber = GetOrderNo();
             return View();
         }

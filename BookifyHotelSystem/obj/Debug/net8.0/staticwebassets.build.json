@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "sDtC1DDNMdagHygtj86YErqsmP5CyzfEJUVq5CsapeA=",
+  "Hash": "OM7HXxD+Oa59HTtDpJWhTg6qMDu/HzLAMP/eCFIc7B8=",
   "Source": "BookifyHotelSystem",
   "BasePath": "_content/BookifyHotelSystem",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\checkout.css"
+    },
+    {
+      "Identity": "D:\\DEPI\\Status_200_Project\\BookifyHotelSystem\\BookifyHotelSystem\\wwwroot\\css\\date-picker-alert.css",
+      "SourceId": "BookifyHotelSystem",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\DEPI\\Status_200_Project\\BookifyHotelSystem\\BookifyHotelSystem\\wwwroot\\",
+      "BasePath": "_content/BookifyHotelSystem",
+      "RelativePath": "css/date-picker-alert.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\date-picker-alert.css"
     },
     {
       "Identity": "D:\\DEPI\\Status_200_Project\\BookifyHotelSystem\\BookifyHotelSystem\\wwwroot\\css\\login.css",

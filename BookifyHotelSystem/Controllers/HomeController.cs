@@ -64,6 +64,19 @@ namespace BookifyHotelSystem.Controllers
         public IActionResult RoomDetails(int id, DateTime? StartDate, DateTime? EndDate)
         {
             Room room = unitOfWork.RoomRepo.FindByIdWithInclude(id);
+            if (!room.IsAvailable)
+                {
+                ViewBag.error = "The selected room is currently not available. Please choose a different room.";
+                return View(room);
+            }
+
+            bool roomAvalilabilty = unitOfWork.BookingRepo.IsRoomAvailable(id, StartDate ?? DateTime.Now, EndDate ?? DateTime.Now.AddDays(1));
+            if (!roomAvalilabilty)
+            {
+                ViewBag.error = "The selected room is not available for the chosen dates. Please select different dates.";
+                return View(room);
+            }
+
 
             List<RoomViewModel> rooms = HttpContext.Session.Get<List<RoomViewModel>>("rooms");
 
@@ -116,7 +129,7 @@ namespace BookifyHotelSystem.Controllers
                 }
             }
 
-            return RedirectToAction("Index");
+            return RedirectToAction("Cart");
         }
 
         public IActionResult Cart()

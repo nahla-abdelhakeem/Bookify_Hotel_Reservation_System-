@@ -18,6 +18,7 @@
 
 @section Styles {
     <link rel="stylesheet" href="~/css/room-details.css" />
+    <link rel="stylesheet" href="~/css/date-picker-alert.css" />
 }
 
 
@@ -135,6 +136,7 @@
 
             <!-- Booking Card Sidebar -->
             <div class="col-lg-4">
+                <!-- Error Alert -->
                 <div class="booking-card-modern ">
                     <div class="booking-card-header">
                         <h4>Reserve Your Stay</h4>
@@ -145,22 +147,21 @@
                         <input type="hidden" asp-for="Id" />
 
                         <div class="date-inputs-row">
-                            <div class="date-input-group">
-                                <label for="StartDate" class="form-label">
-                                    <i class="fas fa-calendar-check"></i> Check-in
+                            <div class="date-picker-wrapper">
+                                <label for="StartDate" class="date-picker-label">
+                                    <i class="fas fa-calendar-check"></i> Check-in Date
                                 </label>
-                                <input type="date" class="form-control" id="StartDate" name="StartDate"
-                                    value="@ViewBag.StartDate"
-                                    min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
+                                <input type="date" class="date-picker-input" id="StartDate" name="StartDate"
+                                    value="@ViewBag.StartDate" min="@DateTime.Now.ToString("yyyy-MM-dd")" required>
                             </div>
-                            <br>
-                            <div class="date-input-group">
-                                <label for="EndDate" class="form-label">
-                                    <i class="fas fa-calendar-times"></i> Check-out
+
+                            <div class="date-picker-wrapper">
+                                <label for="EndDate" class="date-picker-label">
+                                    <i class="fas fa-calendar-times"></i> Check-out Date
                                 </label>
-                                <input type="date" class="form-control" id="EndDate" name="EndDate"
-                                    value="@ViewBag.EndDate"
-                                    min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")" required>
+                                <input type="date" class="date-picker-input" id="EndDate" name="EndDate"
+                                    value="@ViewBag.EndDate" min="@DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")"
+                                    required>
                             </div>
                         </div>
                         <div class="price-breakdown">
@@ -189,6 +190,7 @@
                                 Remove from Reservation Cart
                             </button>
                         }
+
                     </form>
                 </div>
             </div>
@@ -198,6 +200,32 @@
 
 @section Scripts {
     <script src="~/js/room_details.js"></script>
+    <script>
+        // Modern Alert for Errors
+        $(document).ready(function () {
+            @if (@ViewBag.error != null)
+                {
+                    <text>
+                            // Show custom alert instead of browser alert
+                        const alertHtml = `
+                        <div class="alert-custom alert-danger" role="alert">
+                            <div class="alert-icon">
+                                <i class="fas fa-times-circle"></i>
+                            </div>
+                            <div class="alert-content">
+                                <h5 class="alert-title">Booking Error</h5>
+                                <p class="alert-message">@ViewBag.error</p>
+                            </div>
+                            <button type="button" class="alert-close" onclick="this.parentElement.remove()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                            `;
+                            $('.booking-card-modern').before(alertHtml);
+                        </text>
+                }
+            });
+    </script>
 }
 
 

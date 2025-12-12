@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\css\\checkout.css"
     },
     {
+      "Id": "D:\\DEPI\\Status_200_Project\\BookifyHotelSystem\\BookifyHotelSystem\\wwwroot\\css\\date-picker-alert.css",
+      "PackagePath": "staticwebassets\\css\\date-picker-alert.css"
+    },
+    {
       "Id": "D:\\DEPI\\Status_200_Project\\BookifyHotelSystem\\BookifyHotelSystem\\wwwroot\\css\\login.css",
       "PackagePath": "staticwebassets\\css\\login.css"
     },

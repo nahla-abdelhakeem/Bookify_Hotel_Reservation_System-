@@ -19,5 +19,22 @@ namespace BookifyHotelSystem.DatabaseServices.Repositories
                                       .OrderByDescending(b => b.StartDate).ToList();
             return bookings;
         }
+
+        public bool IsRoomAvailable(int roomId, DateTime startDate, DateTime endDate)
+        {
+            bool isConflict = false;
+            var bookings = bookingRepo.Include(b => b.RoomBookings)
+                                      .Where(b => b.RoomBookings.Any(rb => rb.RoomId == roomId))
+                                      .ToList();
+            foreach (var booking in bookings)
+            {
+                if (startDate < booking.EndDate && endDate > booking.StartDate)
+                {
+                    isConflict = true;
+                    break;
+                }
+            }
+            return !isConflict;
+        }
     }
 }
